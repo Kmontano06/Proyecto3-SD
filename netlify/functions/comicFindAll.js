@@ -1,8 +1,6 @@
 "use strict"
-console.log("Hello");
 const redis = require('./redisDB');
 const headers = require('./headersCORS');
-
 function toJson(item, index, arr) {
   arr[index] = JSON.parse(item);
 }
@@ -17,15 +15,15 @@ exports.handler = async (event, context) => {
     });
    
    let keys = [];
-   let n = await redis.get('comic_N');
+   let n = await redis.get('book_N');
    for(let i = 1; i<=n; i++)
-     keys.push('comic_'+i);
-   const comics = await redis.mget(keys);
+     keys.push('book_'+i);
+   const books = await redis.mget(keys);
  
-   comics.forEach(toJson);
-    return { statusCode: 200, headers, body: JSON.stringify(comics)};
+   books.forEach(toJson);
+    return { statusCode: 200, headers, body: JSON.stringify(books)};
   } catch (error) {
     console.log(error);
-    return { statusCode: 400, headers, body: JSON.stringify("El error"+error) };
+    return { statusCode: 400, headers, body: JSON.stringify(error) };
   }
 };
