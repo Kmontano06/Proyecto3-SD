@@ -12,7 +12,7 @@
     <table class="table">
       <thead>
         <tr>
-          <th scope="col">Título</th>>
+          <th scope="col">Título</th>
         </tr>
       </thead>
       <tbody class="scroll-area">
@@ -42,7 +42,6 @@ export default {
   },
   methods: {
     allComics() {
-      console.log("Hello");
       fetch(this.url+'/.netlify/functions/comicFindAll',
         { headers: {'Accept': 'application/json'}})
         .then((response) => response.json())
