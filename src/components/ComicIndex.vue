@@ -12,21 +12,12 @@
     <table class="table">
       <thead>
         <tr>
-          <th scope="col">Imagen</th>
-          <th scope="col">Título</th>
-          <th scope="col">Personaje</th>
-          <th scope="col">Ilustrador</th>
-          <th scope="col">Acciones</th>
+          <th scope="col">Título</th>>
         </tr>
       </thead>
       <tbody class="scroll-area">
         <tr v-for='comic in comics'>
           <td>{{comic.title}}</td>
-          <!--<td><img v-bind:src="comic.img"  width="80" height="110"></td>
-          <td><router-link :to="'/comic/edit/'+comic.id">{{comic.title}}</router-link></td>
-          <td><router-link :to="'/personaje/edit/'+comic.personaje.personaje_id">{{comic.personaje.name}}</router-link></td>
-          <td><router-link :to="'/ilustrador/edit/'+comic.ilustrador.ilustrador_id">{{comic.ilustrador.name}}</router-link></td>
-          <td><button class="btn btn-danger" v-on:click="deleteComic(comic.id)"><img src="../assets/images/eliminar.png" alt="" width="15"/></button></td>-->
         </tr>
       </tbody>
     </table>
@@ -47,10 +38,11 @@ export default {
     };
   },
   mounted() {
-    this.allComics()
+    this.allComics();
   },
   methods: {
     allComics() {
+      console.log("Hello");
       fetch(this.url+'/.netlify/functions/comicFindAll',
         { headers: {'Accept': 'application/json'}})
         .then((response) => response.json())
