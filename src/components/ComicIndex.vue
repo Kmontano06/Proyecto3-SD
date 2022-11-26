@@ -57,6 +57,7 @@ export default {
         { headers: {'Accept': 'application/json'}})
         .then((response) => response.json())
         .then((items) => {
+          console.log(items);
           this.comics = items;
         })
      },
