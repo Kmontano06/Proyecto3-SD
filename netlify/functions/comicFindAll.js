@@ -24,6 +24,6 @@ exports.handler = async (event, context) => {
     return { statusCode: 200, headers, body: JSON.stringify(comics)};
   } catch (error) {
     console.log(error);
-    return { statusCode: 400, headers, body: JSON.stringify(error) };
+    return { statusCode: 400, headers, body: JSON.stringify("El error"+error) };
   }
 };
