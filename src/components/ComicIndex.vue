@@ -51,14 +51,13 @@ export default {
   },
   methods: {
     allComics() {
-      /*fetch(this.url+'/.netlify/functions/comicFindAll',
+      fetch(this.url+'/.netlify/functions/comicFind/comic_1',
         { headers: {'Accept': 'application/json'}})
         .then((response) => response.json())
         .then((items) => {
           console.log(items);
           //this.comics = items;
-        })*/
-      console.log("Hello");
+        })
      }
      /*deleteComic(id) {
        fetch(this.url+'/.netlify/functions/comicDelete/'+id,
