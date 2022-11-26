@@ -1,0 +1,28 @@
+GETSET comic_N "0"
+SET "comic_1" '{"id":1,"title":"Batman:Elregresodelcaballerooscuro","isbn":"978-1-56389-342-1","editorial":"DCComics","pages":184,"genero":"Superhéroes","img":"https://i1.whakoom.com/small/26/33/66e2f2a9b96d4bb89e3634314284cd0b.jpg","personaje":{"personaje_id":1,"name":"Batman"},"ilustrador":{"ilustrador_id":1,"name":"FrankMiller"}}'
+INCR comic_N
+SET "comic_2" '{"id":2,"title":"Wolverine:Honor","isbn":"978-8-49094-908-5","editorial":"MarvelComics","pages":104,"genero":"Superhéroes","img":"https://upload.wikimedia.org/wikipedia/en/thumb/6/6d/Wolverine_%28vol._1%29_1.jpg/220px-Wolverine_%28vol._1%29_1.jpg","personaje":{"personaje_id":3,"name":"Wolverine"},"ilustrador":{"ilustrador_id":1,"name":"FrankMiller"}}'
+INCR comic_N
+SET "comic_3" '{"id":3,"title":"Condorito:FutbolCampeonesdeAmerica","isbn":"978-9-56316-461-9","editorial":"Origo","pages":48,"genero":"Cómico","img":"http://www.elreydelcomic.cl/wp-content/uploads/2018/12/campeones.png","personaje":{"personaje_id":4,"name":"Condorito"},"ilustrador":{"ilustrador_id":2,"name":"RenéRíosBoettiger“Pepo”"}}'
+INCR comic_N
+SET "comic_4" '{"id":4,"title":"Spiderman:LaúltimacaceríadeKraven","isbn":"978-8-41334-935-0","editorial":"MarvelComics","pages":160,"genero":"Superhéroes","img":"https://m.media-amazon.com/images/I/513jVgYbfTL.jpg","personaje":{"personaje_id":5,"name":"Spiderman"},"ilustrador":{"ilustrador_id":3,"name":"MikeZeck"}}'
+INCR comic_N
+SET "comic_5" '{"id":5,"title":"ThePunisher:CircleofBlood","isbn":"978-0-7851-2331-6","editorial":"MarvelComics","pages":176,"genero":"Superhéroes","img":"https://m.media-amazon.com/images/I/418rGijYAcL.jpg","personaje":{"personaje_id":6,"name":"ThePunisher"},"ilustrador":{"ilustrador_id":3,"name":"MikeZeck"}}'
+INCR comic_N
+SET "comic_6" '{"id":6,"title":"LafilosofíadeMafalda","isbn":"978-8-42640-971-3","editorial":"Lumen","pages":160,"genero":"Costumbrista","img":"https://images-na.ssl-images-amazon.com/images/I/81CIzVac1+L.jpg","personaje":{"personaje_id":2,"name":"Mafalda"},"ilustrador":{"ilustrador_id":4,"name":"JoaquínSalvadorLavado“Quino”"}}'
+INCR comic_N
+SET "comic_7" '{"id":7,"title":"TodaMafalda","isbn":"978-8-42641-923-1","editorial":"Lumen","pages":528,"genero":"Costumbrista","img":"https://images-na.ssl-images-amazon.com/images/I/41NcWt6aJvL.jpg","personaje":{"personaje_id":2,"name":"Mafalda"},"ilustrador":{"ilustrador_id":4,"name":"JoaquínSalvadorLavado“Quino”"}}'
+INCR comic_N
+SET "comic_8" '{"id":8,"title":"Mafalda:femeninosingular","isbn":"978-8-42640-585-2","editorial":"Lumen","pages":144,"genero":"Costumbrista","img":"https://images-na.ssl-images-amazon.com/images/I/71L8KjUIW2L.jpg","personaje":{"personaje_id":2,"name":"Mafalda"},"ilustrador":{"ilustrador_id":4,"name":"JoaquínSalvadorLavado“Quino”"}}'
+INCR comic_N
+SET "comic_9" '{"id":9,"title":"Peanuts:Lafelicidadesunamantitacaliente!","isbn":"978-8-49253-456-2","editorial":"Kraken","pages":96,"genero":"Cómico","img":"https://www.udllibros.com/imagenes/9788492/978849253456.JPG","personaje":{"personaje_id":7,"name":"CharlieBrown"},"ilustrador":{"ilustrador_id":5,"name":"CharlesM.Schulz"}}'
+INCR comic_N
+SET "comic_10" '{"id":10,"title":"SnoopytotheRescue","isbn":"978-1-44948-206-0","editorial":"AndrewsMcMeelPublishing","pages":176,"genero":"Cómico","img":"https://m.media-amazon.com/images/I/51wkAQM3GoL.jpg","personaje":{"personaje_id":8,"name":"Snoopy"},"ilustrador":{"ilustrador_id":5,"name":"CharlesM.Schulz"}}'
+INCR comic_N
+SET "comic_11" '{"id":11,"title":"VdeVendetta:EuropatraselReinado,Parte#1","isbn":"978-8-41666-035-3","editorial":"ECC","pages":48,"genero":"Cienciaficción","img":"https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1406479298l/22823687.jpg","personaje":{"personaje_id":9,"name":"V"},"ilustrador":{"ilustrador_id":6,"name":"DavidLloyd"}}'
+INCR comic_N
+SET "comic_12" '{"id":12,"title":"TheGreenLantern","isbn":"978-8-41710-605-8","editorial":"DCComics","pages":368,"genero":"Superhéroes","img":"https://images-na.ssl-images-amazon.com/images/I/91gPtQUKQYL.jpg","personaje":{"personaje_id":10,"name":"GreenLantern"},"ilustrador":{"ilustrador_id":7,"name":"NealAdams"}}'
+INCR comic_N
+
+
+
