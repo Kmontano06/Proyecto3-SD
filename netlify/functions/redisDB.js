@@ -1,12 +1,5 @@
 "use strict";
-
-const Redis = require('ioredis');
-const fs = require('fs');
-
-const redis = new Redis({
-    host: 'redis-18288.c275.us-east-1-4.ec2.cloud.redislabs.com',
-    port: 18288,
-    password: 'kmg61995'
-});
-
-module.exports = redis.connect();
+const { Redis } = require('ioredis');
+const client = new Redis(host:process.env.REDIS_HOST, port:18288,
+                         password:process.env.REDIS_PSW);
+module.exports = client.connect();
