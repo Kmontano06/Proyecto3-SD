@@ -15,9 +15,9 @@ exports.handler = async (event, context) => {
     });
    
    let keys = [];
-   let n = await redis.get('book_N');
+   let n = await redis.get('comic_N');
    for(let i = 1; i<=n; i++)
-     keys.push('book_'+i);
+     keys.push('comic_'+i);
    const books = await redis.mget(keys);
  
    books.forEach(toJson);
