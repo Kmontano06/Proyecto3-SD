@@ -1,6 +1,7 @@
 "use strict"
 const redis = require('./redisDB');
 const headers = require('./headersCORS');
+console.log("Hello");
 function toJson(item, index, arr) {
   arr[index] = JSON.parse(item);
 }
