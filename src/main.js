@@ -6,5 +6,5 @@ import '../node_modules/bootstrap/dist/css/bootstrap.css';
 import '../node_modules/bootstrap-vue/dist/bootstrap-vue.css';
 const app = createApp(App);
   
-//app.config.globalProperties.url = 'https://redis-una.netlify.app';
+app.config.globalProperties.url = 'https://proyecto3-comicsapp-redis.netlify.app';
 app.use(router).mount("#app");
