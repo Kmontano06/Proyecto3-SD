@@ -53,11 +53,7 @@ export default {
     allComics() {
       fetch(this.url+'/.netlify/functions/comicFind/comic_1',
         { headers: {'Accept': 'application/json'}})
-        .then((response) => response.json())
-        .then((items) => {
-          console.log(items);
-          //this.comics = items;
-        })
+        .then((response) => {console.log(response.json())})
      }
      /*deleteComic(id) {
        fetch(this.url+'/.netlify/functions/comicDelete/'+id,
