@@ -58,8 +58,8 @@ export default {
           console.log(items);
           //this.comics = items;
         })
-     },
-     deleteComic(id) {
+     }
+     /*deleteComic(id) {
        fetch(this.url+'/.netlify/functions/comicDelete/'+id,
          { headers: {'Content-Type': 'application/json'},
            method: 'DELETE'})
@@ -67,7 +67,7 @@ export default {
             this.allComics();
           }
         )
-     }
+     }*/
   }
 };
 </script>
