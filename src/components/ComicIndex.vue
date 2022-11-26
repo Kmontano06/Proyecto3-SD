@@ -56,7 +56,7 @@ export default {
         .then((response) => response.json())
         .then((items) => {
           console.log(items);
-          this.comics = items;
+          //this.comics = items;
         })
      },
      deleteComic(id) {
