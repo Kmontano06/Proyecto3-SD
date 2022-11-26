@@ -5,7 +5,6 @@ function toJson(item, index, arr) {
   arr[index] = JSON.parse(item);
 }
 exports.handler = async (event, context) => {
-  console.log("Entre");
   if (event.httpMethod == "OPTIONS") {
 
     return { statusCode: 200, headers, body: "OK" };
