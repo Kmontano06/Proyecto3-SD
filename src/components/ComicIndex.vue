@@ -20,7 +20,7 @@
         </tr>
       </thead>
       <tbody class="scroll-area">
-        <tr v-for='comic in comics'>
+        <tr v-for='comic in comics' v-if='comic != null'>
           <td><img v-bind:src="comic.img"  width="80" height="110"></td>
           <td>  <router-link :to="'/comic/edit/'+comic.id">{{comic.title}}</router-link></td>
           <td><router-link :to="'/personaje/edit/'+comic.personaje_id">{{comic.personaje}}</router-link></td>
