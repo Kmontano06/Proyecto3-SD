@@ -56,7 +56,7 @@ export default {
     return {
       title: 'Comic Data',
       comic: {},
-      cant: {}
+      cant: 0
     }
   },
   mounted() {
@@ -66,7 +66,7 @@ export default {
     else {
       this.getComic();
       this.comic = {
-        'id': 'comic_'+Math.floor(Math.random()*100000000),
+        'id': 'comic_'+(this.cant+1),
         'title': '',
         'isbn':'',
         'editorial':'',
@@ -78,6 +78,7 @@ export default {
         'ilustrador_id': 0,
         'ilustrador': ''
       }
+      console.log(this.cant+1)
 
     }
   },
@@ -111,7 +112,7 @@ export default {
       { headers: {'Accept': 'application/json'}})
       .then((response) => response.json())
       .then((items) => {
-        console.log(items);
+        this.cant= items;
       })
     }
   }
