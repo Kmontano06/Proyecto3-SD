@@ -63,13 +63,7 @@ export default {
     if (route.params.id != null)
       this.findComic(route.params.id);
     else {
-      let cant = 0;
-      fetch(this.url+'/.netlify/functions/comicN',
-      { headers: {'Accept': 'application/json'}})
-      .then((response) => response.json())
-      .then((items) => {
-          cant=items;
-      })
+      console.log(this.getComicN());
       this.comic = {
           'id': 'comic_'+(cant++),
           'title': '',
@@ -83,7 +77,7 @@ export default {
           'ilustrador_id': 0,
           'ilustrador': ''
         }
-        console.log(this.comic);
+        
 
     }
   },
@@ -111,6 +105,16 @@ export default {
           method: 'POST',
           body: JSON.stringify(this.comic)});
       this.$router.push('/comic')
+    },
+    getComicN: function(){
+      let cant = 0;
+      fetch(this.url+'/.netlify/functions/comicN',
+      { headers: {'Accept': 'application/json'}})
+      .then((response) => response.json())
+      .then((items) => {
+        cant = items;
+      })
+      return cant;
     }
   }
 };
