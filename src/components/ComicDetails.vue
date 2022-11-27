@@ -107,7 +107,7 @@ export default {
       this.$router.push('/comic')
     },
     getComicN: function(){
-      const cant = 0;
+      var cant = 0;
       fetch(this.url+'/.netlify/functions/comicN',
       { headers: {'Accept': 'application/json'}})
       .then((response) => response.json())
