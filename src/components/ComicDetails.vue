@@ -64,7 +64,7 @@ export default {
     if (route.params.id != null)
       this.findComic(route.params.id);
     else {
-      this.getComic();
+     
       this.comic = {
         'id': 'comic_'+this.cant,
         'title': '',
@@ -78,7 +78,7 @@ export default {
         'ilustrador_id': 0,
         'ilustrador': ''
       }
-      console.log(this.cant)
+      console.log( this.getComic())
 
     }
   },
@@ -112,7 +112,7 @@ export default {
       { headers: {'Accept': 'application/json'}})
       .then((response) => response.json())
       .then((items) => {
-        this.cant= items;
+        return items;
       })
     }
   }
