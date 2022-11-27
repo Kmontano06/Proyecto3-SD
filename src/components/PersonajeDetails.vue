@@ -69,6 +69,7 @@ export default {
         'desc': '',
         'img': '',
       }
+      this.getPersonajeN();
     }
   },
   methods: {
