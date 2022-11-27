@@ -14,20 +14,14 @@
         <tr>
           <th scope="col">Imagen</th>
           <th scope="col">Nombre</th>
-          <th scope="col">Comics</th>
           <th scope="col">Acciones</th>
         </tr>
       </thead>
       <tbody class="scroll-area">
         <tr v-for='aux in personajes'>
           <td><img v-bind:src="aux.img"  width="80" height="110"></td>
-          <td>  <router-link :to="'/personaje/edit/'+aux._id">{{aux.name}}</router-link></td>
-          <td>
-            <ul  v-for='com in aux.comic'>
-              <li><router-link  class="db" :to="'/comic/edit/'+com.comic_id">{{com.title}}</router-link></li>
-            </ul>
-          </td>
-          <td><button class="btn btn-danger" v-on:click="deletePersonaje(aux._id)"><img src="../assets/images/eliminar.png" alt="" width="15"/></button></td>
+          <td>  <router-link :to="'/personaje/edit/'+aux.id">{{aux.name}}</router-link></td>
+          <td><button class="btn btn-danger" v-on:click="deletePersonaje(aux.id)"><img src="../assets/images/eliminar.png" alt="" width="15"/></button></td>
         </tr>
       </tbody>
     </table>
