@@ -114,7 +114,7 @@ export default {
       .then((items) => {
         comic.num = items;
       });
-      return comic.num;
+      console.log(comic.num)
     }
   }
 };
