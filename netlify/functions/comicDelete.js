@@ -12,7 +12,7 @@ exports.handler = async (event, context) => {
     });
     
     const id = event.path.split("/").reverse()[0];
-    await redis.del("comic_"+id);
+    await redis.del(id);
     await redis.decr('comic_N');
     return { statusCode: 200, headers, body: 'OK'};
   } catch (error) {
