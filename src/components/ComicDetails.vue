@@ -55,7 +55,8 @@ export default {
   data() {
     return {
       title: 'Comic Data',
-      comic: {}
+      comic: {},
+      cant: {},
     }
   },
   mounted() {
@@ -63,6 +64,8 @@ export default {
     if (route.params.id != null)
       this.findComic(route.params.id);
     else {
+       
+     this.getComic();
       this.comic = {
         'id': 'comic_'+Math.floor(Math.random()*100000000),
         'title': '',
@@ -76,6 +79,7 @@ export default {
         'ilustrador_id': 0,
         'ilustrador': ''
       }
+
     }
   },
   methods: {
@@ -85,6 +89,7 @@ export default {
       .then((response) => response.json())
       .then((items) => {
        this.comic = items[0];
+
       })
     },
     updateComic: function(id) {
@@ -101,6 +106,14 @@ export default {
           method: 'POST',
           body: JSON.stringify(this.comic)});
       this.$router.push('/comic')
+    }
+    getComic: function() {
+      fetch(this.url+'/.netlify/functions/comicN',
+      { headers: {'Accept': 'application/json'}})
+      .then((response) => response.json())
+      .then((items) => {
+        console.log(items);
+      })
     }
   }
 };
