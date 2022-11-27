@@ -65,7 +65,7 @@ export default {
     else {
       console.log(this.getComicN());
       this.comic = {
-          'id': 'comic_'+(cant++),
+          'id': 'comic_',
           'title': '',
           'isbn':'',
           'editorial':'',
