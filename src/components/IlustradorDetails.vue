@@ -6,10 +6,10 @@
       </div>
       <div class='col-md-10'>
        <h2>{{ilustrador.name}}</h2>
-       <p>Comics:</p> 
+       <!--<p>Comics:</p> 
         <ul  v-for='com in ilustrador.comic'>
               <li><router-link  class="db" :to="'/comic/edit/'+com.comic_id">{{com.title}}</router-link></li>
-        </ul>
+        </ul>-->
 
       </div>
     </div>
@@ -38,7 +38,7 @@
       <div class='col-12 text-r mb-5'>
         <router-link to='/ilustrador' class='btn btn-secondary mr-20'>Regresar</router-link>
         <button v-if='create' class='btn btn-primary' v-on:click='createIlustrador()'>Guardar Ilustrador</button>
-        <button v-if='edit' class='btn btn-primary' v-on:click='updateIlustrador(ilustrador._id)'>Actualizar Ilustrador</button>
+        <button v-if='edit' class='btn btn-primary' v-on:click='updateIlustrador(ilustrador.id)'>Actualizar Ilustrador</button>
       </div>
     </form>
   </div>
@@ -62,14 +62,12 @@ export default {
     if (route.params.id != null)
       this.findIlustrador(route.params.id);
     else {
-      this.ilustrador = {   
-        '_id': Math.floor(Math.random()*100000000),
+      this.ilustrador = {
         'name': '',
         'nationality': '',
         'birthday': '',
         'ocupation': '',
-        'img': '',
-        'comic': []
+        'img': ''
       }
     }
   },
@@ -81,6 +79,16 @@ export default {
       .then((items) => {
        this.ilustrador = items[0];
       })
+    },
+    getIlustradorN: function(){
+      let num = 0;
+      fetch(this.url+'/.netlify/functions/ilustradorN',
+      { headers: {'Accept': 'application/json'}})
+      .then((response) => response.json())
+      .then((items) => {
+        num = parseInt(items);
+        this.ilustrador.id = "ilustrador_"+ (num+1);
+      });
     },
     updateIlustrador: function(id) {
       fetch(this.url+'/.netlify/functions/ilustradorUpdate/'+id,
