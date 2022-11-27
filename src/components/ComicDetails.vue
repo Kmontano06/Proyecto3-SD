@@ -93,11 +93,13 @@ export default {
       })
     },
     getComicN: function(){
+      let num = 0;
       fetch(this.url+'/.netlify/functions/comicN',
       { headers: {'Accept': 'application/json'}})
       .then((response) => response.json())
       .then((items) => {
-        this.comic.id = "comic_"+ (items+1);
+        num = items;
+        this.comic.id = "comic_"+ (num+1);
       });
     },
     updateComic: function(id) {
