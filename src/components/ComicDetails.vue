@@ -113,6 +113,7 @@ export default {
       .then((response) => response.json())
       .then((items) => {
         this.cant= items;
+        console.log(items[0])
       })
     }
   }
