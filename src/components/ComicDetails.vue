@@ -60,11 +60,12 @@ export default {
     }
   },
   mounted() {
+    this.getComicN();
     const route = useRoute()
     if (route.params.id != null)
       this.findComic(route.params.id);
     else {
-      console.log(this.getComicN());
+      console.log(this.num);
       this.comic = {
           'id': 'comic_',
           'title': '',
@@ -115,7 +116,6 @@ export default {
       .then((items) => {
         this.num = items;
       });
-      console.log(this.num);
     }
   }
 };
