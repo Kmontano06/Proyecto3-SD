@@ -19,15 +19,13 @@
           <th scope="col">Acciones</th>
         </tr>
       </thead>
-      <tbody class="scroll-area">
-        <tr v-for='comic in comics' >
-          <span v-if='comic != null'>
+      <tbody class="scroll-area" v-for='comic in comics'>
+        <tr  v-if='comic != null'>
             <td><img v-bind:src="comic.img"  width="80" height="110"></td>
             <td>  <router-link :to="'/comic/edit/'+comic.id">{{comic.title}}</router-link></td>
             <td><router-link :to="'/personaje/edit/'+comic.personaje_id">{{comic.personaje}}</router-link></td>
             <td><router-link :to="'/ilustrador/edit/'+comic.ilustrador_id">{{comic.ilustrador}}</router-link></td>
             <td><button class="btn btn-danger" v-on:click="deleteComic(comic.id)"><img src="../assets/images/eliminar.png" alt="" width="15"/></button></td>
-        </span>
         </tr>
       </tbody>
     </table>
