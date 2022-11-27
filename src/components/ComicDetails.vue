@@ -64,7 +64,7 @@ export default {
     if (route.params.id != null)
       this.findComic(route.params.id);
     else {
-     
+      this.cant= this.getComic();
       this.comic = {
         'id': 'comic_'+this.cant,
         'title': '',
@@ -78,7 +78,7 @@ export default {
         'ilustrador_id': 0,
         'ilustrador': ''
       }
-      console.log( this.getComic())
+      console.log( this.cant)
 
     }
   },
