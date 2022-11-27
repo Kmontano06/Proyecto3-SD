@@ -56,7 +56,7 @@ export default {
     return {
       title: 'Comic Data',
       comic: {},
-      num: 0,
+      num: {'num':0},
     }
   },
   mounted() {
@@ -65,7 +65,7 @@ export default {
       this.findComic(route.params.id);
     else {
       this.getComicN();
-      console.log(this.num);
+      console.log(this.num.num);
       this.comic = {
           'id': 'comic_',
           'title': '',
@@ -98,7 +98,7 @@ export default {
       { headers: {'Accept': 'application/json'}})
       .then((response) => response.json())
       .then((items) => {
-        this.num = items;
+        this.num.num = items;
       });
     },
     updateComic: function(id) {
