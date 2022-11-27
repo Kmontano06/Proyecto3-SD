@@ -18,7 +18,7 @@
             <div class="card-body">
               <h5 class="card-title">Ilustradores</h5>
               <p class="card-text">Se encarga de elaborar representaciones visuales fieles de la realidad de ideas</p>
-              <!--<router-link to="/ilustrador">Ver más</router-link>-->
+              <router-link to="/ilustrador">Ver más</router-link>
             </div>
           </div>
         </div>
@@ -28,7 +28,7 @@
             <div class="card-body">
               <h5 class="card-title">Personajes</h5>
               <p class="card-text">Es cada una de las personas o seres ya sean reales o imaginarios que aparecen en una narrativa</p>
-              <!--<router-link to="/personaje">Ver más</router-link>-->
+              <router-link to="/personaje">Ver más</router-link>
             </div>
           </div>
         </div>

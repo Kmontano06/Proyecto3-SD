@@ -16,13 +16,13 @@ exports.handler = async (event, context) => {
     });
    
    let keys = [];
-   let n = await redis.get('comic_N');
+   let n = await redis.get('personaje_N');
    for(let i = 1; i<=n; i++)
-     keys.push('comic_'+i);
-   const comics = await redis.mget(keys);
+     keys.push('personaje_'+i);
+   const personajes = await redis.mget(keys);
  
-   comics.forEach(toJson);
-    return { statusCode: 200, headers, body: JSON.stringify(comics)};
+   personajes.forEach(toJson);
+    return { statusCode: 200, headers, body: JSON.stringify(personajes)};
   } catch (error) {
     console.log(error);
     return { statusCode: 400, headers, body: JSON.stringify(error) };

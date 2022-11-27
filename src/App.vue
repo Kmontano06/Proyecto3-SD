@@ -13,10 +13,10 @@
                <router-link to="/comic" class="nav-link">Comics</router-link>
             </li>
             <li class="nav-item">
-                <!--<router-link to="/ilustrador" class="nav-link">Ilustradores</router-link>-->
+                <router-link to="/ilustrador" class="nav-link">Ilustradores</router-link>
             </li>
             <li class="nav-item">
-               <!--<router-link to="/personaje" class="nav-link">Personajes</router-link>-->
+               <router-link to="/personaje" class="nav-link">Personajes</router-link>
             </li>
           </ul>
         </div>

@@ -2,10 +2,10 @@ import { createRouter, createWebHistory } from "vue-router";
 import Home from "./components/Home.vue";
 import ComicIndex from "./components/ComicIndex.vue";
 import ComicDetails from "./components/ComicDetails.vue"
-//import PersonajeIndex from "./components/PersonajeIndex.vue";
-//import PersonajeDetails from "./components/PersonajeDetails.vue"
-//import IlustradorIndex from "./components/IlustradorIndex.vue";
-//import IlustradorDetails from "./components/IlustradorDetails.vue"
+import PersonajeIndex from "./components/PersonajeIndex.vue";
+import PersonajeDetails from "./components/PersonajeDetails.vue"
+import IlustradorIndex from "./components/IlustradorIndex.vue";
+import IlustradorDetails from "./components/IlustradorDetails.vue"
 
 const routes = [
   { path: "/", component: Home },
@@ -17,7 +17,7 @@ const routes = [
   { path: "/comic/delete/:id", 
     component: ComicIndex, props: {delete:true} },
     //Ilustrador
-  /*{ path: "/ilustrador", component: IlustradorIndex },
+  { path: "/ilustrador", component: IlustradorIndex },
   { path: "/ilustrador/edit/:id", 
     component: IlustradorDetails, props: {edit:true} },
   { path: "/ilustrador/create", 
@@ -31,7 +31,7 @@ const routes = [
   { path: "/personaje/create", 
     component: PersonajeDetails, props: {create:true} },
   { path: "/personaje/delete/:id", 
-    component: PersonajeIndex, props: {delete:true} }*/
+    component: PersonajeIndex, props: {delete:true} }
 ];
 
 const history = createWebHistory();
