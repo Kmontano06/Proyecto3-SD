@@ -55,8 +55,7 @@ export default {
   data() {
     return {
       title: 'Comic Data',
-      comic: {},
-      cant: 0
+      comic: {}
     }
   },
   mounted() {
@@ -64,7 +63,7 @@ export default {
     if (route.params.id != null)
       this.findComic(route.params.id);
     else {
-      let cant=0
+      let cant = 0;
       fetch(this.url+'/.netlify/functions/comicN',
       { headers: {'Accept': 'application/json'}})
       .then((response) => response.json())
