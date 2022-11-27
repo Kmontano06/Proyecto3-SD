@@ -64,10 +64,7 @@ export default {
     if (route.params.id != null)
       this.findComic(route.params.id);
     else {
-      this.getComicN();
-      console.log(this.num.num);
       this.comic = {
-          'id': 'comic_',
           'title': '',
           'isbn':'',
           'editorial':'',
@@ -79,6 +76,8 @@ export default {
           'ilustrador_id': 0,
           'ilustrador': ''
         }
+        this.getComicN():
+        console.log(this.comic);
         
 
     }
@@ -98,7 +97,7 @@ export default {
       { headers: {'Accept': 'application/json'}})
       .then((response) => response.json())
       .then((items) => {
-        this.num.num = items;
+        this.comic.id = "comic_"+items++;
       });
     },
     updateComic: function(id) {
