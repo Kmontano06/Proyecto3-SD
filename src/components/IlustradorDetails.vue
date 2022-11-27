@@ -6,11 +6,6 @@
       </div>
       <div class='col-md-10'>
        <h2>{{ilustrador.name}}</h2>
-       <!--<p>Comics:</p> 
-        <ul  v-for='com in ilustrador.comic'>
-              <li><router-link  class="db" :to="'/comic/edit/'+com.comic_id">{{com.title}}</router-link></li>
-        </ul>-->
-
       </div>
     </div>
     
