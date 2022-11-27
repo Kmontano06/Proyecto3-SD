@@ -55,7 +55,8 @@ export default {
   data() {
     return {
       title: 'Comic Data',
-      comic: {}
+      comic: {},
+      num: 0
     }
   },
   mounted() {
@@ -112,9 +113,9 @@ export default {
       { headers: {'Accept': 'application/json'}})
       .then((response) => response.json())
       .then((items) => {
-        comic.num = items;
+        this.num = items;
       });
-      console.log(comic.num)
+      console.log(this.num);
     }
   }
 };
