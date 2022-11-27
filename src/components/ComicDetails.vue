@@ -65,20 +65,8 @@ export default {
       this.findComic(route.params.id);
     else {
       this.getComic();
-      console.log(this.cant);
-      this.comic = {
-        'id': 'comic_'+this.cant,
-        'title': '',
-        'isbn':'',
-        'editorial':'',
-        'pages': 0,
-        'genero': '',
-        'img': '',
-        'personaje_id': 0,
-        'personaje': '',
-        'ilustrador_id': 0,
-        'ilustrador': ''
-      }
+      console.log(this.comic);
+      
     }
   },
   methods: {
@@ -111,7 +99,19 @@ export default {
       { headers: {'Accept': 'application/json'}})
       .then((response) => response.json())
       .then((items) => {
-        this.cant = items;
+        this.comic = {
+          'id': 'comic_'+(items++),
+          'title': '',
+          'isbn':'',
+          'editorial':'',
+          'pages': 0,
+          'genero': '',
+          'img': '',
+          'personaje_id': 0,
+          'personaje': '',
+          'ilustrador_id': 0,
+          'ilustrador': ''
+        }
       })
     }
   }
