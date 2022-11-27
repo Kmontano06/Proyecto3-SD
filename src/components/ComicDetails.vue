@@ -114,6 +114,7 @@ export default {
       .then((items) => {
         this.cant= items;
         console.log(items)
+        console.log(this.cant)
       })
     }
   }
