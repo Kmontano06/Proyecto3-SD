@@ -64,9 +64,25 @@ export default {
     if (route.params.id != null)
       this.findComic(route.params.id);
     else {
-      this.getComic();
+      fetch(this.url+'/.netlify/functions/comicN',
+      { headers: {'Accept': 'application/json'}})
+      .then((response) => response.json())
+      .then((items) => {
+        this.comic = {
+          'id': 'comic_'+(items++),
+          'title': '',
+          'isbn':'',
+          'editorial':'',
+          'pages': 0,
+          'genero': '',
+          'img': '',
+          'personaje_id': 0,
+          'personaje': '',
+          'ilustrador_id': 0,
+          'ilustrador': ''
+        }
+      })
       console.log(this.comic);
-      
     }
   },
   methods: {
@@ -93,26 +109,6 @@ export default {
           method: 'POST',
           body: JSON.stringify(this.comic)});
       this.$router.push('/comic')
-    },
-    getComic: function() {
-      fetch(this.url+'/.netlify/functions/comicN',
-      { headers: {'Accept': 'application/json'}})
-      .then((response) => response.json())
-      .then((items) => {
-        this.comic = {
-          'id': 'comic_'+(items++),
-          'title': '',
-          'isbn':'',
-          'editorial':'',
-          'pages': 0,
-          'genero': '',
-          'img': '',
-          'personaje_id': 0,
-          'personaje': '',
-          'ilustrador_id': 0,
-          'ilustrador': ''
-        }
-      })
     }
   }
 };
