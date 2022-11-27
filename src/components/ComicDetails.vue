@@ -6,8 +6,8 @@
       </div>
       <div class="col-md-10">
        <h2>{{comic.title}}</h2>
-       <p>Ilustrador: <router-link :to="'/ilustrador/edit/'+comic.ilustrador.ilustrador_id">{{comic.ilustrador.name}}</router-link></p>
-       <p>Personaje Principal: <router-link :to="'/personaje/edit/'+comic.personaje.personaje_id">{{comic.personaje.name}}</router-link></p>
+       <p>Ilustrador: <router-link :to="'/ilustrador/edit/'+comic.ilustrador_id">{{comic.ilustrador}}</router-link></p>
+       <p>Personaje Principal: <router-link :to="'/personaje/edit/'+comic.personaje_id">{{comic.personaje}}</router-link></p>
       </div>
     </div>
     
@@ -39,7 +39,7 @@
       <div class="col-12 text-r mb-5">
         <router-link to="/comic" class="btn btn-secondary mr-20">Regresar</router-link>
         <button v-if="create" class="btn btn-primary" v-on:click="createComic()">Guardar Comic</button>
-        <button v-if="edit" class="btn btn-primary" v-on:click="updateComic(comic._id)">Actualizar Comic</button>
+        <button v-if="edit" class="btn btn-primary" v-on:click="updateComic(comic.id)">Actualizar Comic</button>
       </div>
     </form>
   </div>
@@ -64,21 +64,17 @@ export default {
       this.findComic(route.params.id);
     else {
       this.comic = {
-        '_id': Math.floor(Math.random()*100000000),
+        'id': 'comic_'+Math.floor(Math.random()*100000000),
         'title': '',
         'isbn':'',
         'editorial':'',
         'pages': 0,
         'genero': '',
         'img': '',
-        'personaje': {
-          'personaje_id': 0,
-          'name': ''
-        },
-        'ilustrador': {
-          'ilustrador_id': 0,
-          'name': ''
-        }
+        'personaje_id': 0,
+        'personaje': '',
+        'ilustrador_id': 0,
+        'ilustrador': ''
       }
     }
   },

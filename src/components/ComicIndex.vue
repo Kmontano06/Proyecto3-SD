@@ -12,12 +12,20 @@
     <table class="table">
       <thead>
         <tr>
+          <th scope="col">Imagen</th>
           <th scope="col">Título</th>
+          <th scope="col">Personaje</th>
+          <th scope="col">Ilustrador</th>
+          <th scope="col">Acciones</th>
         </tr>
       </thead>
       <tbody class="scroll-area">
         <tr v-for='comic in comics'>
-          <td>{{comic.title}}</td>
+          <td><img v-bind:src="comic.img"  width="80" height="110"></td>
+          <td>  <router-link :to="'/comic/edit/'+comic.id">{{comic.title}}</router-link></td>
+          <td><router-link :to="'/personaje/edit/'+comic.personaje_id">{{comic.personaje}}</router-link></td>
+          <td><router-link :to="'/ilustrador/edit/'+comic.ilustrador_id">{{comic.ilustrador}}</router-link></td>
+          <td><button class="btn btn-danger" v-on:click="deleteComic(comic.id)"><img src="../assets/images/eliminar.png" alt="" width="15"/></button></td>
         </tr>
       </tbody>
     </table>
@@ -28,7 +36,7 @@
 
 
 <script>
-	
+  
 export default {
   name: "Comics Index",
   data() {
@@ -38,7 +46,7 @@ export default {
     };
   },
   mounted() {
-    this.allComics();
+    this.allComics()
   },
   methods: {
     allComics() {
@@ -46,11 +54,10 @@ export default {
         { headers: {'Accept': 'application/json'}})
         .then((response) => response.json())
         .then((items) => {
-          console.log(items);
           this.comics = items;
         })
-     }
-     /*deleteComic(id) {
+     },
+     deleteComic(id) {
        fetch(this.url+'/.netlify/functions/comicDelete/'+id,
          { headers: {'Content-Type': 'application/json'},
            method: 'DELETE'})
@@ -58,7 +65,7 @@ export default {
             this.allComics();
           }
         )
-     }*/
+     }
   }
 };
 </script>
