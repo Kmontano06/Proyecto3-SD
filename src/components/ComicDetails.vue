@@ -56,15 +56,15 @@ export default {
     return {
       title: 'Comic Data',
       comic: {},
-      num: 0
+      num: 0,
     }
   },
   mounted() {
-    this.getComicN();
     const route = useRoute()
     if (route.params.id != null)
       this.findComic(route.params.id);
     else {
+      this.getComicN();
       console.log(this.num);
       this.comic = {
           'id': 'comic_',
@@ -93,6 +93,14 @@ export default {
 
       })
     },
+    getComicN: function(){
+      fetch(this.url+'/.netlify/functions/comicN',
+      { headers: {'Accept': 'application/json'}})
+      .then((response) => response.json())
+      .then((items) => {
+        this.num = items;
+      });
+    },
     updateComic: function(id) {
       fetch(this.url+'/.netlify/functions/comicUpdate/'+id,
         { headers: {'Content-Type':'application/json'},
@@ -107,15 +115,6 @@ export default {
           method: 'POST',
           body: JSON.stringify(this.comic)});
       this.$router.push('/comic')
-    },
-    getComicN: function(){
-      const comic={};
-      fetch(this.url+'/.netlify/functions/comicN',
-      { headers: {'Accept': 'application/json'}})
-      .then((response) => response.json())
-      .then((items) => {
-        this.num = items;
-      });
     }
   }
 };
