@@ -98,9 +98,9 @@ export default {
       { headers: {'Accept': 'application/json'}})
       .then((response) => response.json())
       .then((items) => {
-        num = items;
-        //this.comic.id = "comic_"+ (num+1);
-        console.log(typeof paseInt(items) === 'string')
+        num = parseInt(items);
+        this.comic.id = "comic_"+ (num+1);
+        console.log(typeof num === 'string')
       });
     },
     updateComic: function(id) {
