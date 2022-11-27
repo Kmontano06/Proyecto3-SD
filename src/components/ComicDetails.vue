@@ -64,12 +64,15 @@ export default {
     if (route.params.id != null)
       this.findComic(route.params.id);
     else {
+      let cant=0
       fetch(this.url+'/.netlify/functions/comicN',
       { headers: {'Accept': 'application/json'}})
       .then((response) => response.json())
       .then((items) => {
-        this.comic = {
-          'id': 'comic_'+(items++),
+          cant=items;
+      })
+      this.comic = {
+          'id': 'comic_'+(cant++),
           'title': '',
           'isbn':'',
           'editorial':'',
@@ -81,8 +84,7 @@ export default {
           'ilustrador_id': 0,
           'ilustrador': ''
         }
-        console.log(items++)
-      })
+        console.log(this.comic);
 
     }
   },
