@@ -64,7 +64,7 @@ export default {
       this.findComic(route.params.id);
     else {
       this.comic = {
-        'id': 'comic_'+Math.floor(Math.random()*100000000),
+        'id': ""+Math.floor(Math.random()*100000000)+"",
         'title': '',
         'isbn':'',
         'editorial':'',
