@@ -56,7 +56,7 @@ export default {
     return {
       title: 'Comic Data',
       comic: {},
-      cant: {},
+      cant: {}
     }
   },
   mounted() {
@@ -64,8 +64,7 @@ export default {
     if (route.params.id != null)
       this.findComic(route.params.id);
     else {
-       
-     this.getComic();
+      this.getComic();
       this.comic = {
         'id': 'comic_'+Math.floor(Math.random()*100000000),
         'title': '',
@@ -106,7 +105,7 @@ export default {
           method: 'POST',
           body: JSON.stringify(this.comic)});
       this.$router.push('/comic')
-    }
+    },
     getComic: function() {
       fetch(this.url+'/.netlify/functions/comicN',
       { headers: {'Accept': 'application/json'}})
