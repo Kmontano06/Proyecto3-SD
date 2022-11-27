@@ -97,7 +97,7 @@ export default {
       { headers: {'Accept': 'application/json'}})
       .then((response) => response.json())
       .then((items) => {
-        this.comic.id = "comic_"+items++;
+        this.comic.id = "comic_"+ (items++);
       });
     },
     updateComic: function(id) {
