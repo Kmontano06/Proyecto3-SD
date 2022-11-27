@@ -107,13 +107,13 @@ export default {
       this.$router.push('/comic')
     },
     getComicN: function(){
-      let cant = 0;
+      const cant = 0;
       fetch(this.url+'/.netlify/functions/comicN',
       { headers: {'Accept': 'application/json'}})
       .then((response) => response.json())
       .then((items) => {
         cant = items;
-      })
+      });
       return cant;
     }
   }
