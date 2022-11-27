@@ -15,7 +15,8 @@ exports.handler = async (event, context) => {
     });
    
    const data = JSON.parse(event.body);
-   await redis.put(data.id,event.body);
+   await redis.set(data.id,event.body);
+   await redis.incr('personaje_N');
    return { statusCode: 200, headers, body: 'OK'};
   } catch (error) {
     console.log(error);

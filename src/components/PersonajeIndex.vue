@@ -17,8 +17,8 @@
           <th scope="col">Acciones</th>
         </tr>
       </thead>
-      <tbody class="scroll-area">
-        <tr v-for='aux in personajes'>
+      <tbody class="scroll-area" v-for='aux in personajes'>
+        <tr v-if='aux != null'>
           <td><img v-bind:src="aux.img"  width="80" height="110"></td>
           <td>  <router-link :to="'/personaje/edit/'+aux.id">{{aux.name}}</router-link></td>
           <td><button class="btn btn-danger" v-on:click="deletePersonaje(aux.id)"><img src="../assets/images/eliminar.png" alt="" width="15"/></button></td>
