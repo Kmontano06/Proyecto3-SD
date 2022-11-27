@@ -15,7 +15,7 @@ exports.handler = async (event, context) => {
     redis.on("connect", function() {
       console.log("You are now connected");
     });
-   const comic = await redis.get(id);
+   const comic = await redis.get("comic_"+id);
    let comics = [];
    comics.push(comic);
    comics.forEach(toJson);
