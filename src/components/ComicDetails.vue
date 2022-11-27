@@ -78,7 +78,7 @@ export default {
         'ilustrador_id': 0,
         'ilustrador': ''
       }
-      console.log(this.cant++)
+      console.log(this.cant)
 
     }
   },
