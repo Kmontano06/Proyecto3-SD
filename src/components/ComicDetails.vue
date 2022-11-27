@@ -76,7 +76,7 @@ export default {
           'ilustrador_id': 0,
           'ilustrador': ''
         }
-        this.getComicN():
+        this.getComicN();
         console.log(this.comic);
         
 
