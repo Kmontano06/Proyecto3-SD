@@ -81,8 +81,9 @@ export default {
           'ilustrador_id': 0,
           'ilustrador': ''
         }
+        console.log(items++)
       })
-      console.log(this.comic);
+
     }
   },
   methods: {
