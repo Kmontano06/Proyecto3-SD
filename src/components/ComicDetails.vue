@@ -99,7 +99,8 @@ export default {
       .then((response) => response.json())
       .then((items) => {
         num = items;
-        this.comic.id = "comic_"+ (num+1);
+        //this.comic.id = "comic_"+ (num+1);
+        console.log(typeof items === 'object')
       });
     },
     updateComic: function(id) {
