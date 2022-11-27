@@ -66,7 +66,7 @@ export default {
     else {
       this.getComic();
       this.comic = {
-        'id': 'comic_'+(this.cant+1),
+        'id': 'comic_'+(this.cant++),
         'title': '',
         'isbn':'',
         'editorial':'',
@@ -78,7 +78,7 @@ export default {
         'ilustrador_id': 0,
         'ilustrador': ''
       }
-      console.log(this.cant+1)
+      console.log(this.cant++)
 
     }
   },
@@ -113,8 +113,6 @@ export default {
       .then((response) => response.json())
       .then((items) => {
         this.cant= items;
-        console.log(items)
-        console.log(this.cant)
       })
     }
   }
