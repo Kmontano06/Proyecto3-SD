@@ -100,7 +100,7 @@ export default {
       .then((items) => {
         num = items;
         //this.comic.id = "comic_"+ (num+1);
-        console.log(typeof items === 'string')
+        console.log(typeof paseInt(items) === 'string')
       });
     },
     updateComic: function(id) {
